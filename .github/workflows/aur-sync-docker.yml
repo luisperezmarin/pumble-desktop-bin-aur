@@ -2,7 +2,7 @@ name: aur-sync
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -13,8 +13,13 @@ jobs:
         uses: luisperezmarin/aur-sync-nogit-action@main
         with:
           package_name: pumble-desktop-bin
-          github_local_repo: 'luisperezmarin/pumble-desktop-bin-aur'
+          github_local_repo: "luisperezmarin/pumble-desktop-bin-aur"
           commit_username: ${{ secrets.AUR_USERNAME }}
           commit_email: ${{ secrets.AUR_EMAIL }}
           ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
           url_bin: https://pumble.com/apps
+          extra_dependencies: >
+            alsa-lib atk at-spi2-atk at-spi2-core cairo dbus desktop-file-utils expat gdk-pixbuf2 glib2
+            gtk3 hicolor-icon-theme libappindicator-gtk3 libcups libdrm libnotify libsecret libx11 libxcb
+            libxcomposite libxdamage libxext libxfixes libxkbcommon libxrandr libxshmfence libxss libxtst
+            mesa nspr nss pango util-linux-libs xdg-utils
