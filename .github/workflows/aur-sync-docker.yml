@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync AUR package with Github release
-        uses: luisperezmarin/aur-sync-nogit-action@master
+        uses: luisperezmarin/aur-sync-nogit-action@main
         with:
           package_name: pumble-desktop-bin
           github_local_repo: 'luisperezmarin/pumble-desktop-bin-aur'
