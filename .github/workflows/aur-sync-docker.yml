@@ -1,0 +1,20 @@
+name: aur-sync
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  aur-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync AUR package with Github release
+        uses: luisperezmarin/aur-sync-nogit-action@master
+        with:
+          package_name: pumble-desktop-bin
+          github_local_repo: 'luisperezmarin/pumble-desktop-bin-aur'
+          commit_username: ${{ secrets.AUR_USERNAME }}
+          commit_email: ${{ secrets.AUR_EMAIL }}
+          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+          url_bin: https://pumble.com/apps
