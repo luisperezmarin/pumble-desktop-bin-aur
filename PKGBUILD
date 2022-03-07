@@ -11,7 +11,7 @@ depends=('alsa-lib' 'atk' 'at-spi2-atk' 'at-spi2-core' 'cairo' 'dbus' 'desktop-f
 options=('!strip' '!emptydirs')
 install=${pkgname}.install
 source=("https://pumble.com/download/desktop/linux/Pumble-linux-${pkgver}.deb")
-sha256sums=('d9704c7a84c4622b428748eee0a62932afd0d8a003be06feaad3c9a95ba09561'
+sha256sums=('d9704c7a84c4622b428748eee0a62932afd0d8a003be06feaad3c9a95ba09561')
 
 package(){
 	# Extract package data
